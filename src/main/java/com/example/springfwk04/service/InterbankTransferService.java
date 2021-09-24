@@ -14,6 +14,9 @@ public class InterbankTransferService {
   private List<ExternalBankService> externalBankService;
 
   public void transfer(String destinationBank, double amount) {
+
+    // externalBankService.forEach(impl -> log.info(impl.getClass().toString())); // Ahora son los proxies!
+
     ExternalBankService externalBankService = getExternalBankService(destinationBank);
     externalBankService.transfer(amount);
   }
