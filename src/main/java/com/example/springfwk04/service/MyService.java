@@ -2,16 +2,18 @@ package com.example.springfwk04.service;
 
 import com.example.springfwk04.cache.spi.CacheService;
 import java.util.Random;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("myService")
 @Slf4j
-@AllArgsConstructor
 public class MyService {
 
   private CacheService cacheService;
+
+  public MyService(CacheService cacheService) {
+    this.cacheService = cacheService;
+  }
 
   public Integer getSomeInteger() {
     if (cacheService.hasInteger()) {

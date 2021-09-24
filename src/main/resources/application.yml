@@ -1,2 +1,2 @@
 cache:
-  implementation: infinispam # infinispam | redis
+  implementation: redis # infinispam | redis
